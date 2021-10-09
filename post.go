@@ -23,7 +23,7 @@ func createpost(response http.ResponseWriter, request *http.Request) {
 }
 func CheckpostwithID(id primitive.ObjectID) (Posts, error) {
 	var pt Posts
-	collection := client.Database("appointy").Collection("meetings")
+	collection := client.Database("appointy").Collection("app")
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 	err := collection.FindOne(ctx, Posts{ID: id}).Decode(&pt)
