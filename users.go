@@ -13,7 +13,7 @@ import (
 
 func createuser(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
-	var person Users
+	var user Users
 	_ = json.NewDecoder(request.Body).Decode(&person)
 	collection := client.Database("appointy").Collection("app")
 	ctx, _ := context.WithTimeout(context.Background(), 5*time.Second)
@@ -22,7 +22,7 @@ func createuser(response http.ResponseWriter, request *http.Request) {
 
 }
 func CheckUserwithID(id primitive.ObjectID) (Users, error) {
-	var meet Users
+	var user Users
 	collection := client.Database("appointy").Collection("app")
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
@@ -30,7 +30,7 @@ func CheckUserwithID(id primitive.ObjectID) (Users, error) {
 	if meet.ID != id {
 		err = errors.New("Error 400: ID not present")
 	}
-	return meet, err
+	return user, err
 }
 func GetUserwithID(response http.ResponseWriter, request *http.Request) {
 	if request.Method != "GET" {
