@@ -21,7 +21,7 @@ func createpost(response http.ResponseWriter, request *http.Request) {
 	json.NewEncoder(response).Encode(result)
 
 }
-func CheckpostwithID(id primitive.ObjectID) (Users, error) {
+func CheckpostwithID(id primitive.ObjectID) (Posts, error) {
 	var pt Posts
 	collection := client.Database("appointy").Collection("meetings")
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
