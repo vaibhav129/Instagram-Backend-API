@@ -16,6 +16,7 @@ Post have the following Attributes.
 
 
 ### Supported Features:
+
 - **Create User** <br> 
 A POST request using the URL `'/users'` which returns the meeting in JSON format
 - **Get a User using id** <br>
@@ -34,4 +35,3 @@ A GET request using the URL `'/postid/<id here>'` which returns the meeting in J
 ## 4)Get post by id
 ![image](https://user-images.githubusercontent.com/63915610/136668085-792a3c96-183f-46c2-a2b3-72af9405899a.png)
 ![image](https://user-images.githubusercontent.com/63915610/136668098-261baa03-8086-484e-8bf0-c648cee4faac.png)
-
